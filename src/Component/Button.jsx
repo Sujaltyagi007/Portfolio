@@ -1,10 +1,11 @@
 import React from 'react'
+import { motion } from "motion/react"
 
-const Button = ({icon}) => {
+const Button = ({icon,active}) => {
   return (
-    <div className=' my-[25%] w-[4vw] text-black dark:text-white h-[8.5vh] flex justify-center text-xl items-center rounded-full  bg-yellow-500'> 
+    <motion.div whileHover={{width:`8.5vw`}} className={`my-2 w-[3.5vw]  origin-left dark:text-white h-[7.2vh] flex justify-center text-xl cursor-pointer items-center rounded-full  ${active && "bg-yellow-500 dark:bg-yellow-500 text-white"} dark:bg-[#2b2a2a] bg-[#eeeeee] `} > 
       {icon}
-    </div>
+    </motion.div>
   )
 }
 
