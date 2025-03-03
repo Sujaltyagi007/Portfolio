@@ -1,14 +1,7 @@
 import React from 'react'
 import image from "../assets/dark.jpg"
-import Button from '../Component/Button'
-import { FaArrowRight, FaHome, FaUser } from "react-icons/fa";
-import { PiBagSimpleFill, PiChatCircleFill } from 'react-icons/pi';
-import { FaEnvelopeOpen } from 'react-icons/fa6';
-import { BiSolidMessageRoundedDetail } from 'react-icons/bi';
+import { FaArrowRight } from "react-icons/fa";
 import { motion } from 'framer-motion';
-
-
-
 
 const Home = () => {
   
@@ -37,19 +30,10 @@ const Home = () => {
               <div className="text-white h-[52px] text-2xl flex justify-center items-center bg-amber-400 rounded-full p-2 w-[25%] "><FaArrowRight /></div>
             </motion.div>
           </div>
-          <div className=" h-full w-[20%] flex flex-col items-end justify-center ">
-            <div className=""></div>
-            <ul className='flex flex-col gap-0.5'>
-              <Button icon={<FaHome />} active={true} />
-              <Button icon={<FaUser />} active={false} />
-              <Button icon={<PiBagSimpleFill />} active={false} />
-              <Button icon={<FaEnvelopeOpen />} active={false} />
-              <Button icon={<BiSolidMessageRoundedDetail />} active={false} />
-            </ul>
-          </div>
+          
         </div>
       </div>
-      <div className=" -rotate-15 relative bg-yellow-500 -top-6 -left-66 w-[40%] h-[150%]">
+      <div className=" -rotate-15 relative bg-yellow-500 -top-6 -left-75 w-[40%] h-[150%]">
         <div className=""></div>
         <div className="">
           {/* <img src={hello} alt="" /> */}
