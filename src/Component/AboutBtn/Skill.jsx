@@ -1,24 +1,35 @@
-import React from 'react'
-import AboutCircle from './AboutCircle'
+import React from "react";
+import CircleProgress from "./CircleProgress";
 
 const Skill = () => {
-    return (
-        <div>
-            <div className="flex flex-col items-center h-screen mt-[10%]" >
-                <h1 className=' uppercase text-3xl font-bold text-white m-5 ' >My Skill</h1>
-                <div className=" grid grid-cols-4 px-[5%] w-full  ">
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"html"} per={"25%"} />  </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"javascript"} per={"89%"} /> </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"css"} per={"70%"} /> </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"php"} per={"66%"} /> </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"core java"} per={"95%"} /> </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"Springboot"} per={"50%"} /> </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"tailwind"} per={"65%"} /> </div>
-                    <div className=" flex justify-center items-center "><AboutCircle prop={"Bootstrap"} per={"45%"} /> </div>
-                </div>
+  const data = [
+    { number: 25, value: "Html" },
+    { number: 89, value: "css" },
+    { number: 70, value: "javascript" },
+    { number: 66, value: "php" },
+    { number: 95, value: "wordpress" },
+    { number: 50, value: "jquery" },
+    { number: 65, value: "angular" },
+    { number: 45, value: "React" },
+  ];
+  return (
+    <div>
+      <div className="flex flex-col items-center h-screen mt-[10%]">
+        <h1 className=" uppercase text-3xl font-bold dark:text-white text-black m-5 ">
+          My Skill
+        </h1>
+        <div className=" grid grid-cols-4 px-[5%] w-full  ">
+          {data.map((items) => (
+            <div className=" flex flex-col justify-center items-center ">
+              <CircleProgress currentvalue={items.number} circlewidth={180} />
+              <p className="text-xl font-[500]">{items.value}</p>
             </div>
+          )
+          )}
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Skill
+export default Skill;

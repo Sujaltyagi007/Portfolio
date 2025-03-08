@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FaDownload } from "react-icons/fa6";
 import AboutBtn from "../Component/AboutBtn/SqurareBtn"
 import Skill from '../Component/AboutBtn/Skill';
+import Experience from '../Component/AboutBtn/Experience/Experience';
 
 const About = () => {
     return (
@@ -50,6 +51,7 @@ const About = () => {
                 </div>
             </div>
             <Skill />
+            <Experience />
         </div>
     )
 }
