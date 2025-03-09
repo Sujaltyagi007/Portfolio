@@ -2,18 +2,5 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 body::-webkit-scrollbar {
-  display: none;
-}
-.circel-bg{
-  fill: none;
-  stroke: #ddd;
-}
-.circel-back{
-  fill: none;
-  stroke: #ffb400;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.about-text{
-  font-weight: 600;
-}
+    display: none;
+  }
