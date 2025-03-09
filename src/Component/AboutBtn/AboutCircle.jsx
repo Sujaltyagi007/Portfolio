@@ -1,16 +1,43 @@
-import React from 'react'
+import { svg } from "framer-motion/client";
+import React from "react";
 
-const AboutCircle = ({prop, per}) => {
+const AboutCircle = ({ width, percentage }) => {
+  const radius = 60;
+  const dashArray = radius * Math.PI * 2;
+  const dashOff = dashArray - (dashArray * percentage) / 100;
   return (
-    <div className="flex flex-col gap-5 my-[10%] justify-center items-center m-auto">
-      <div className=' h-[9vw] w-[9vw] rounded-full bg-amber-500 flex justify-center items-center'>
-        <div className=' h-[7.8vw] text-3xl text-white w-[7.8vw] rounded-full dark:bg-black flex justify-center items-center'>
-          {per}
-        </div>
-      </div>
-      <div className=" uppercase text-white font-medium text-lg">{prop}</div>
-    </div>
-  )
-}
+    <svg height={width} width={width} viewBox={` 0 0 ${width} ${width}`}>
+      <circle
+        cx={width / 2}
+        cy={width / 2}
+        strokeWidth={"10px"}
+        r={radius}
+        className="circel-bg"
+      />
+      <circle
+        cx={width / 2}
+        cy={width / 2}
+        strokeWidth={"10px"}
+        r={radius}
+        className="circel-back"
+        style={{
+          strokeDasharray: dashArray,
+          strokeDashoffset: dashOff,
+        }}
+        transform={`rotate(-90 ${width / 2} ${width / 2})`}
+      />
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dy="0.5rem" 
+        dx="0.2rem"
+        className="about-text dark:text-white text-black text-[2vw]"
+      >
+        {percentage}%
+      </text>
+    </svg>
+  );
+};
 
-export default AboutCircle
+export default AboutCircle;
