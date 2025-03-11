@@ -2,5 +2,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 body::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
+.circle-bg {
+  fill: none;
+  stroke: #ddd;
+  opacity: 0.4;
+}
+.circle-progress {
+  fill: none;
+  stroke: #ffb900;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

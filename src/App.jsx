@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBtn from "./Component/NavBtn";
+import NavBtn from "./Component/Home/NavBtn";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import { AnimatePresence, motion } from "framer-motion";
@@ -12,7 +12,6 @@ const App = () => {
     console.log(icon);
   };
   const [activeTabs, setActiveTabs] = useState("Home");
-  console.log(activeTabs);
   const ActiveTabsComponents = () => {
     switch (activeTabs) {
       case "Home":
@@ -26,7 +25,7 @@ const App = () => {
 
   return (
     <div
-      className={`w-full h-screen relative  ${
+      className={`w-full relative  ${
         icon && "dark"
       } bg-amber-50 dark:bg-gray-950 `}
     >
@@ -44,7 +43,7 @@ const App = () => {
         <AnimatePresence>
           {activeTabs && (
             <motion.div
-              key={activeTabs} // Use activeTabs as a unique key
+              key={activeTabs} 
               initial={{ y: `0vh`, opacity: 0 }}
               animate={{ y: `0vh`, opacity: 1 }}
               exit={{ y: `100vh`, opacity: 0 }}

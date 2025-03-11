@@ -12,8 +12,8 @@ const Experience = () => {
         Experience and education
       </h1>
       <div className=" grid grid-cols-2 px-[5%] ">
-        {headBtndata.map((item) => (
-          <div className="flex m-5">
+        {headBtndata.map((item,index) => (
+          <div className="flex m-5" key={index}>
             <p className=" text-white text-2xl h-fit w-fit p-[1.5%] rounded-full bg-amber-500 flex">
               <PiBagFill />
             </p>
