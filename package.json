@@ -13,6 +13,7 @@
     "@barba/core": "^2.10.3",
     "@tailwindcss/vite": "^4.0.6",
     "framer-motion": "^12.4.7",
+    "gsap": "^3.12.7",
     "motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

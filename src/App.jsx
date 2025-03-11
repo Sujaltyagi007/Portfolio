@@ -1,36 +1,43 @@
-import React, { useState } from 'react'
-import NavBtn from './Component/NavBtn';
-import Home from './Pages/Home'
-import About from './Pages/About';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from "react";
+import NavBtn from "./Component/NavBtn";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import { AnimatePresence, motion } from "framer-motion";
+import MouseFollowAnimation from "./Component/MouseAnimation/MouseFollowAnimation";
 
 const App = () => {
   const [icon, setIcon] = useState(false);
   const handleIcon = () => {
     setIcon(!icon);
-    console.log(icon)
-  }
+    console.log(icon);
+  };
   const [activeTabs, setActiveTabs] = useState("Home");
-  console.log(activeTabs)
+  console.log(activeTabs);
   const ActiveTabsComponents = () => {
     switch (activeTabs) {
-      case 'Home':
-        return <Home />
+      case "Home":
+        return <Home />;
         break;
-      case 'About':
-        return <About />
+      case "About":
+        return <About />;
         break;
     }
-  }
+  };
 
   return (
-    // <div className=" flex justify-center items-center m-auto">
-    //   <TestCircle />
-    // </div>
-    <div className={`w-full h-screen relative ${icon && "dark"} bg-amber-50 dark:bg-gray-950 `}>
+    <div
+      className={`w-full h-screen relative  ${
+        icon && "dark"
+      } bg-amber-50 dark:bg-gray-950 `}
+    >
+      <MouseFollowAnimation />
       <div className=" sticky top-0 left-0 z-20">
         <div className=" absolute top-0 right-0 ">
-          <NavBtn handleButton={handleIcon} button={icon} setActive={setActiveTabs} />
+          <NavBtn
+            handleButton={handleIcon}
+            button={icon}
+            setActive={setActiveTabs}
+          />
         </div>
       </div>
       <div className="-z-0">
@@ -47,12 +54,9 @@ const App = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default App
+export default App;
